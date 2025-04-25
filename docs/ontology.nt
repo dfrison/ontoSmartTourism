@@ -36,6 +36,36 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Object property to find all events in a city" .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent> <http://www.w3.org/2000/01/rdf-schema#label> "City Has Event" .
+# 
+# http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "Object property to find all hotels in a city" .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel> <http://www.w3.org/2000/01/rdf-schema#label> "City Has Hotel" .
+# 
+# http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant> <http://www.w3.org/2000/01/rdf-schema#comment> "Object property to find all restaurants in a city" .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant> <http://www.w3.org/2000/01/rdf-schema#label> "City Has Restaurant" .
+# 
+# http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "Object property to find all tourist attraction in a city" .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "City has tourist attraction" .
+# 
+# http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport> <http://www.w3.org/2000/01/rdf-schema#comment> "Object property to find all trasnports in a city" .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport> <http://www.w3.org/2000/01/rdf-schema#label> "City Has Transport" .
+# 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
@@ -82,7 +112,6 @@
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> <http://www.w3.org/2000/01/rdf-schema#comment> "The estimated average price for a standard meal (or per person) at this restaurant, in the local currency. Excludes special menus or discounts."@en .
@@ -128,43 +157,82 @@
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> <http://www.w3.org/2000/01/rdf-schema#comment> "Hotel Stars"@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> <http://www.w3.org/2000/01/rdf-schema#comment> "The official classification of a hotel's quality level, represented as a number of stars (typically 1-5)."@en .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel Stars"@en .
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A unique machine-readable identifier for an entity (e.g., UUID, database key, or IRI). This is distinct from human-readable names and should be persistent and unambiguous."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier"@en .
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong> <http://www.w3.org/2000/01/rdf-schema#comment> "A comma separated location (latitud, longitud)" .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong> <http://www.w3.org/2000/01/rdf-schema#label> "Latitud Longitud" .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong> <http://www.w3.org/2000/01/rdf-schema#sameAs> "http://www.w3.org/2003/01/geo/wgs84_pos#lat_long" .
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#comment> "The primary human-readable identifier or title of an entity (e.g., city name, hotel name, event name)." .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name> <http://www.w3.org/2000/01/rdf-schema#label> "Name"@en .
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#comment> "A numerical evaluation score representing the quality or user satisfaction of an entity (e.g., hotel, restaurant, attraction). Use xsd:decimal for fractional values (e.g., 4.7)."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> <http://www.w3.org/2000/01/rdf-schema#label> "Rating"@en .
@@ -217,11 +285,11 @@
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
-_:genid1 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid18 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "A planned public or social occasion, such as a sports competition, concert, festival, or exhibition."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en .
 # 
@@ -234,14 +302,16 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant> <http://www.w3.org/2000/01/rdf-schema#comment> "A restaurant that is clasified as high ended due the quality of the food and the service." .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant> <http://www.w3.org/2000/01/rdf-schema#label> "High End restaurant" .
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-_:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> <http://www.w3.org/2000/01/rdf-schema#comment> "An establishment that provides lodging, meals, and other services for travelers and tourists."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> <http://www.w3.org/2000/01/rdf-schema#label> "Hotel"@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> <http://www.w3.org/2000/01/rdf-schema#sameAs> "https://dbpedia.org/page/Hotel" .
@@ -249,11 +319,11 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#integer> .
-_:genid3 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "5"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#integer> .
+_:genid20 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "5"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#comment> "A high-end hotel offering premium amenities, exceptional service, and often located in prestigious areas."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> <http://www.w3.org/2000/01/rdf-schema#label> "Luxury Hotel"@en .
 # 
@@ -289,11 +359,11 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-_:genid4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid21 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> <http://www.w3.org/2000/01/rdf-schema#comment> "A business establishment where meals are prepared and served to customers for dining in or takeaway."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> <http://www.w3.org/2000/01/rdf-schema#label> "Restaurant"@en .
 # 
@@ -324,14 +394,16 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "A cultural tourist attraction that is rated by the guests with good reviews" .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "To cultural tourist attraction" .
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
-_:genid5 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-_:genid5 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid22 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> <http://www.w3.org/2000/01/rdf-schema#comment> "A place of interest that draws visitors due to its cultural, historical, natural, or entertainment value."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Tourist Attraction"@en .
 # 
@@ -349,11 +421,11 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
-_:genid6 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
-_:genid6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City> .
+_:genid23 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> <http://www.w3.org/2000/01/rdf-schema#comment> "A system or service for moving people or goods from one place to another, including vehicles, infrastructure, and routes."@en .
 <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport> <http://www.w3.org/2000/01/rdf-schema#label> "Transport"@en .
 # 
@@ -494,52 +566,54 @@ _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid26 .
 _:genid26 <http://www.w3.org/2003/11/swrl#arguments> _:genid28 .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "300"^^<http://www.w3.org/2001/XMLSchema#integer> .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#rating> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#price> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid26 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> .
-<http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
+_:genid26 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+<http://www.w3.org/2003/11/swrlb#greaterThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid30 .
-_:genid30 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#rating> .
-_:genid30 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
-_:genid30 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
+_:genid30 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#price> .
+_:genid30 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid30 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice> .
 _:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid32 .
 _:genid32 <http://www.w3.org/2003/11/swrl#arguments> _:genid34 .
 _:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "60"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#price> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#stars> .
 _:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
-<http://www.w3.org/2003/11/swrlb#greaterThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
+_:genid32 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> .
+<http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Builtin> .
 _:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid36 .
-_:genid36 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#price> .
-_:genid36 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
-_:genid36 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> .
+_:genid36 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#stars> .
+_:genid36 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid36 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> .
 _:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
 _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid38 .
-_:genid38 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
-_:genid38 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
+_:genid38 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid38 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
 _:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
 _:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid24 <http://www.w3.org/2003/11/swrl#head> _:genid39 .
 _:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid40 .
-_:genid40 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
-_:genid40 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant> .
+_:genid40 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
+_:genid40 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> .
 _:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
 _:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid41 <http://www.w3.org/2003/11/swrl#body> _:genid48 .
+_:genid41 <http://www.w3.org/2003/11/swrl#body> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
 _:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
 _:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
 _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
@@ -547,150 +621,148 @@ _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid43 .
 _:genid43 <http://www.w3.org/2003/11/swrl#arguments> _:genid45 .
 _:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
 _:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
 _:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#r> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#rating> .
 _:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid43 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+_:genid43 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> .
 _:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
 _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid47 .
-_:genid47 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r> .
-_:genid47 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid47 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#rating> .
+_:genid47 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
 _:genid47 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
 _:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
 _:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 _:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid49 .
-_:genid49 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid49 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid41 <http://www.w3.org/2003/11/swrl#head> _:genid50 .
+_:genid49 <http://www.w3.org/2003/11/swrl#arguments> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
 _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
-_:genid51 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid51 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid52 <http://www.w3.org/2003/11/swrl#body> _:genid59 .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid57 .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid53 .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid54 .
-_:genid54 <http://www.w3.org/2003/11/swrl#arguments> _:genid56 .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#r> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid54 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid58 .
-_:genid58 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r> .
-_:genid58 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid58 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "60"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#price> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid53 .
+_:genid53 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#price> .
+_:genid53 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid53 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid55 .
+_:genid55 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid55 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid41 <http://www.w3.org/2003/11/swrl#head> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
+_:genid57 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid57 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid58 <http://www.w3.org/2003/11/swrl#body> _:genid65 .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid63 .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid60 .
-_:genid60 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid60 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid52 <http://www.w3.org/2003/11/swrl#head> _:genid61 .
+_:genid60 <http://www.w3.org/2003/11/swrl#arguments> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid61 .
 _:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid62 .
-_:genid62 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid62 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> .
-_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid63 <http://www.w3.org/2003/11/swrl#body> _:genid70 .
-_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid68 .
-_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid64 .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid65 .
-_:genid65 <http://www.w3.org/2003/11/swrl#arguments> _:genid67 .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid66 .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#r> .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid65 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
-_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid69 .
-_:genid69 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r> .
-_:genid69 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid69 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
-_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#r> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid60 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid64 .
+_:genid64 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r> .
+_:genid64 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid64 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid66 .
+_:genid66 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid66 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid58 <http://www.w3.org/2003/11/swrl#head> _:genid67 .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid68 .
+_:genid68 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid68 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid69 <http://www.w3.org/2003/11/swrl#body> _:genid76 .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid70 .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid71 .
-_:genid71 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid71 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum> .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid63 <http://www.w3.org/2003/11/swrl#head> _:genid72 .
+_:genid71 <http://www.w3.org/2003/11/swrl#arguments> _:genid73 .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid72 .
 _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid73 .
-_:genid73 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
-_:genid73 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> .
-_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid7 <http://www.w3.org/2003/11/swrl#body> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid9 .
-_:genid9 <http://www.w3.org/2003/11/swrl#arguments> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "300"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#price> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid13 .
-_:genid13 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#price> .
-_:genid13 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
-_:genid13 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
-_:genid15 <http://www.w3.org/2003/11/swrl#arguments> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#stars> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid15 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid19 .
-_:genid19 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#stars> .
-_:genid19 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
-_:genid19 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid21 .
-_:genid21 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
-_:genid21 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid7 <http://www.w3.org/2003/11/swrl#head> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid23 .
-_:genid23 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> .
-_:genid23 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#r> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid71 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid75 .
+_:genid75 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r> .
+_:genid75 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid75 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid77 .
+_:genid77 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid77 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid69 <http://www.w3.org/2003/11/swrl#head> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid79 .
+_:genid79 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid79 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid80 <http://www.w3.org/2003/11/swrl#body> _:genid87 .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid85 .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid82 .
+_:genid82 <http://www.w3.org/2003/11/swrl#arguments> _:genid84 .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid83 .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "4.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <urn:swrl:var#r> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid82 <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#BuiltinAtom> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid86 .
+_:genid86 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r> .
+_:genid86 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid86 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid88 .
+_:genid88 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid88 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid80 <http://www.w3.org/2003/11/swrl#head> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid90 .
+_:genid90 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta> .
+_:genid90 <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

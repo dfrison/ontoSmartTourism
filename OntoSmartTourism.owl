@@ -116,6 +116,21 @@
         <Class IRI="#UrbanBus"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#cityHasEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cityHasHotel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cityHasRestaurant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cityHasTouristAttraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cityHasTransport"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hotelIsLocatedIn"/>
     </Declaration>
     <Declaration>
@@ -551,6 +566,26 @@
         <NamedIndividual IRI="#Zaragoza"/>
         <Literal>41.6488,-0.8891</Literal>
     </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cityHasEvent"/>
+        <ObjectProperty IRI="#takesPlaceIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cityHasHotel"/>
+        <ObjectProperty IRI="#hotelIsLocatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cityHasRestaurant"/>
+        <ObjectProperty IRI="#restaurantIsLocatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cityHasTouristAttraction"/>
+        <ObjectProperty IRI="#touristAttractionIsLocatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cityHasTransport"/>
+        <ObjectProperty IRI="#transportOperatesIn"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hotelIsLocatedIn"/>
         <Class IRI="#Hotel"/>
@@ -591,10 +626,6 @@
         <ObjectProperty IRI="#transportOperatesIn"/>
         <Class IRI="#City"/>
     </ObjectPropertyRange>
-    <EquivalentDataProperties>
-        <DataProperty IRI="#averageMealPrice"/>
-        <DataProperty IRI="#averageTransportPrice"/>
-    </EquivalentDataProperties>
     <DataPropertyDomain>
         <DataProperty IRI="#averageMealPrice"/>
         <Class IRI="#Restaurant"/>
@@ -625,59 +656,36 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#identifier"/>
-        <Class IRI="#City"/>
+        <ObjectUnionOf>
+            <Class IRI="#City"/>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+            <Class IRI="#Transport"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#identifier"/>
-        <Class IRI="#Event"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#identifier"/>
-        <Class IRI="#Hotel"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#identifier"/>
-        <Class IRI="#Restaurant"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#identifier"/>
-        <Class IRI="#TouristAttraction"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#identifier"/>
-        <Class IRI="#Transport"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#name"/>
+        <DataProperty IRI="#latLong"/>
         <Class IRI="#City"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#name"/>
-        <Class IRI="#Event"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#name"/>
-        <Class IRI="#Hotel"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#name"/>
-        <Class IRI="#Restaurant"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#name"/>
-        <Class IRI="#TouristAttraction"/>
+        <ObjectUnionOf>
+            <Class IRI="#City"/>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#rating"/>
-        <Class IRI="#Hotel"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#rating"/>
-        <Class IRI="#Restaurant"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#rating"/>
-        <Class IRI="#TouristAttraction"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+        </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#averageMealPrice"/>
@@ -709,6 +717,10 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#identifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#latLong"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -969,6 +981,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HighEndRestaurant</IRI>
+        <Literal>A restaurant that is clasified as high ended due the quality of the food and the service.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighEndRestaurant</IRI>
+        <Literal>High End restaurant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Hotel</IRI>
         <Literal xml:lang="en">An establishment that provides lodging, meals, and other services for travelers and tourists.</Literal>
     </AnnotationAssertion>
@@ -1134,6 +1156,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TopCulturalTouristAttraction</IRI>
+        <Literal>A cultural tourist attraction that is rated by the guests with good reviews</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TopCulturalTouristAttraction</IRI>
+        <Literal>To cultural tourist attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TouristAttraction</IRI>
         <Literal xml:lang="en">A place of interest that draws visitors due to its cultural, historical, natural, or entertainment value.</Literal>
     </AnnotationAssertion>
@@ -1234,6 +1266,56 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cityHasEvent</IRI>
+        <Literal>Object property to find all events in a city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cityHasEvent</IRI>
+        <Literal>City Has Event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cityHasHotel</IRI>
+        <Literal>Object property to find all hotels in a city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cityHasHotel</IRI>
+        <Literal>City Has Hotel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cityHasRestaurant</IRI>
+        <Literal>Object property to find all restaurants in a city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cityHasRestaurant</IRI>
+        <Literal>City Has Restaurant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cityHasTouristAttraction</IRI>
+        <Literal>Object property to find all tourist attraction in a city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cityHasTouristAttraction</IRI>
+        <Literal>City has tourist attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cityHasTransport</IRI>
+        <Literal>Object property to find all trasnports in a city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cityHasTransport</IRI>
+        <Literal>City Has Transport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#company</IRI>
         <Literal xml:lang="en">Relates a transport service (e.g., bus line, bike-sharing system) to the company or organization responsible for its operation.</Literal>
     </AnnotationAssertion>
@@ -1290,12 +1372,12 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hotelStars</IRI>
-        <Literal xml:lang="en">Hotel Stars</Literal>
+        <Literal xml:lang="en">The official classification of a hotel&apos;s quality level, represented as a number of stars (typically 1-5).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#hotelStars</IRI>
-        <Literal xml:lang="en">The official classification of a hotel&apos;s quality level, represented as a number of stars (typically 1-5).</Literal>
+        <Literal xml:lang="en">Hotel Stars</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

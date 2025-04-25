@@ -40,6 +40,41 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent
+:cityHasEvent rdf:type owl:ObjectProperty ;
+              owl:inverseOf :takesPlaceIn ;
+              rdfs:comment "Object property to find all events in a city" ;
+              rdfs:label "City Has Event" .
+
+
+###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel
+:cityHasHotel rdf:type owl:ObjectProperty ;
+              owl:inverseOf :hotelIsLocatedIn ;
+              rdfs:comment "Object property to find all hotels in a city" ;
+              rdfs:label "City Has Hotel" .
+
+
+###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant
+:cityHasRestaurant rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :restaurantIsLocatedIn ;
+                   rdfs:comment "Object property to find all restaurants in a city" ;
+                   rdfs:label "City Has Restaurant" .
+
+
+###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction
+:cityHasTouristAttraction rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :touristAttractionIsLocatedIn ;
+                          rdfs:comment "Object property to find all tourist attraction in a city" ;
+                          rdfs:label "City has tourist attraction" .
+
+
+###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport
+:cityHasTransport rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :transportOperatesIn ;
+                  rdfs:comment "Object property to find all trasnports in a city" ;
+                  rdfs:label "City Has Transport" .
+
+
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn
 :hotelIsLocatedIn rdf:type owl:ObjectProperty ;
                   rdfs:domain :Hotel ;
@@ -86,7 +121,6 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice
 :averageMealPrice rdf:type owl:DatatypeProperty ;
-                  owl:equivalentProperty :averageTransportPrice ;
                   rdfs:domain :Restaurant ;
                   rdfs:range xsd:decimal ;
                   rdfs:comment "The estimated average price for a standard meal (or per person) at this restaurant, in the local currency. Excludes special menus or discounts."@en ;
@@ -138,18 +172,21 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 :hotelStars rdf:type owl:DatatypeProperty ;
             rdfs:domain :Hotel ;
             rdfs:range xsd:integer ;
-            rdfs:comment "Hotel Stars"@en ,
-                         "The official classification of a hotel's quality level, represented as a number of stars (typically 1-5)."@en .
+            rdfs:comment "The official classification of a hotel's quality level, represented as a number of stars (typically 1-5)."@en ;
+            rdfs:label "Hotel Stars"@en .
 
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier
 :identifier rdf:type owl:DatatypeProperty ;
-            rdfs:domain :City ,
-                        :Event ,
-                        :Hotel ,
-                        :Restaurant ,
-                        :TouristAttraction ,
-                        :Transport ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :City
+                                        :Event
+                                        :Hotel
+                                        :Restaurant
+                                        :TouristAttraction
+                                        :Transport
+                                      )
+                        ] ;
             rdfs:range xsd:string ;
             rdfs:comment "A unique machine-readable identifier for an entity (e.g., UUID, database key, or IRI). This is distinct from human-readable names and should be persistent and unambiguous."@en ;
             rdfs:label "Identifier"@en .
@@ -157,6 +194,8 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong
 :latLong rdf:type owl:DatatypeProperty ;
+         rdfs:domain :City ;
+         rdfs:range xsd:string ;
          rdfs:comment "A comma separated location (latitud, longitud)" ;
          rdfs:label "Latitud Longitud" ;
          rdfs:sameAs "http://www.w3.org/2003/01/geo/wgs84_pos#lat_long" .
@@ -164,11 +203,14 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name
 :name rdf:type owl:DatatypeProperty ;
-      rdfs:domain :City ,
-                  :Event ,
-                  :Hotel ,
-                  :Restaurant ,
-                  :TouristAttraction ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :City
+                                  :Event
+                                  :Hotel
+                                  :Restaurant
+                                  :TouristAttraction
+                                )
+                  ] ;
       rdfs:range xsd:string ;
       rdfs:comment "The primary human-readable identifier or title of an entity (e.g., city name, hotel name, event name)." ;
       rdfs:label "Name"@en .
@@ -176,9 +218,12 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating
 :rating rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Hotel ,
-                    :Restaurant ,
-                    :TouristAttraction ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Hotel
+                                    :Restaurant
+                                    :TouristAttraction
+                                  )
+                    ] ;
         rdfs:range xsd:decimal ;
         rdfs:comment "A numerical evaluation score representing the quality or user satisfaction of an entity (e.g., hotel, restaurant, attraction). Use xsd:decimal for fractional values (e.g., 4.7)."@en ;
         rdfs:label "Rating"@en ;
@@ -251,7 +296,9 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant
 :HighEndRestaurant rdf:type owl:Class ;
-                   rdfs:subClassOf :Restaurant .
+                   rdfs:subClassOf :Restaurant ;
+                   rdfs:comment "A restaurant that is clasified as high ended due the quality of the food and the service." ;
+                   rdfs:label "High End restaurant" .
 
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel
@@ -354,7 +401,9 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction
 :TopCulturalTouristAttraction rdf:type owl:Class ;
-                              rdfs:subClassOf :TouristAttraction .
+                              rdfs:subClassOf :TouristAttraction ;
+                              rdfs:comment "A cultural tourist attraction that is rated by the guests with good reviews" ;
+                              rdfs:label "To cultural tourist attraction" .
 
 
 ###  http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction
@@ -529,6 +578,61 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 [ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Hotel ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hotelStars ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#stars>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#stars> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 5 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hotelNightPrice ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#price>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first <urn:swrl:var#price> ;
+                                                                                                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                           rdf:first 300 ;
+                                                                                                                                                           rdf:rest rdf:nil
+                                                                                                                                                         ]
+                                                                                                                                              ]
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :LuxuryHotel ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Restaurant ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
                                                      ] ;
@@ -684,61 +788,6 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :TopCulturalTouristAttraction ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#ta>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Hotel ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hotelStars ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#stars>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
-                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                          rdf:first <urn:swrl:var#stars> ;
-                                                                                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first 5 ;
-                                                                                                                                     rdf:rest rdf:nil
-                                                                                                                                   ]
-                                                                                                                        ]
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hotelNightPrice ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#price>
-                                                                                      ] ;
-                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                                rdf:first <urn:swrl:var#price> ;
-                                                                                                                                                rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                           rdf:first 300 ;
-                                                                                                                                                           rdf:rest rdf:nil
-                                                                                                                                                         ]
-                                                                                                                                              ]
-                                                                                                 ] ;
-                                                                                       rdf:rest rdf:nil
-                                                                                     ]
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :LuxuryHotel ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]

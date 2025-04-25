@@ -1,5 +1,35 @@
 [ {
   "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
@@ -12,45 +42,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid13",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
-  "http://www.w3.org/2003/11/swrl#argument1" : [ {
-    "@id" : "urn:swrl:var#h"
-  } ],
-  "http://www.w3.org/2003/11/swrl#argument2" : [ {
-    "@id" : "urn:swrl:var#price"
-  } ],
-  "http://www.w3.org/2003/11/swrl#propertyPredicate" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice"
-  } ]
-}, {
-  "@id" : "_:genid15",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
-  "http://www.w3.org/2003/11/swrl#arguments" : [ {
-    "@list" : [ {
-      "@id" : "urn:swrl:var#stars"
-    }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "5"
-    } ]
-  } ],
-  "http://www.w3.org/2003/11/swrl#builtin" : [ {
-    "@id" : "http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"
-  } ]
-}, {
   "@id" : "_:genid19",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
-  "http://www.w3.org/2003/11/swrl#argument1" : [ {
-    "@id" : "urn:swrl:var#h"
-  } ],
-  "http://www.w3.org/2003/11/swrl#argument2" : [ {
-    "@id" : "urn:swrl:var#stars"
-  } ],
-  "http://www.w3.org/2003/11/swrl#propertyPredicate" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars"
-  } ]
-}, {
-  "@id" : "_:genid2",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
@@ -63,22 +55,56 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid21",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
-  "http://www.w3.org/2003/11/swrl#argument1" : [ {
-    "@id" : "urn:swrl:var#h"
+  "@id" : "_:genid20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "5"
   } ],
-  "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
+  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars"
+  } ]
+}, {
+  "@id" : "_:genid21",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid23",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
-  "http://www.w3.org/2003/11/swrl#argument1" : [ {
-    "@id" : "urn:swrl:var#h"
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
   } ],
-  "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel"
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "_:genid24",
@@ -106,6 +132,97 @@
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
+      "@id" : "urn:swrl:var#price"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "300"
+    } ]
+  } ],
+  "http://www.w3.org/2003/11/swrl#builtin" : [ {
+    "@id" : "http://www.w3.org/2003/11/swrlb#greaterThan"
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
+  "http://www.w3.org/2003/11/swrl#argument1" : [ {
+    "@id" : "urn:swrl:var#h"
+  } ],
+  "http://www.w3.org/2003/11/swrl#argument2" : [ {
+    "@id" : "urn:swrl:var#price"
+  } ],
+  "http://www.w3.org/2003/11/swrl#propertyPredicate" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice"
+  } ]
+}, {
+  "@id" : "_:genid32",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
+  "http://www.w3.org/2003/11/swrl#arguments" : [ {
+    "@list" : [ {
+      "@id" : "urn:swrl:var#stars"
+    }, {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "5"
+    } ]
+  } ],
+  "http://www.w3.org/2003/11/swrl#builtin" : [ {
+    "@id" : "http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"
+  } ]
+}, {
+  "@id" : "_:genid36",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
+  "http://www.w3.org/2003/11/swrl#argument1" : [ {
+    "@id" : "urn:swrl:var#h"
+  } ],
+  "http://www.w3.org/2003/11/swrl#argument2" : [ {
+    "@id" : "urn:swrl:var#stars"
+  } ],
+  "http://www.w3.org/2003/11/swrl#propertyPredicate" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars"
+  } ]
+}, {
+  "@id" : "_:genid38",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
+  "http://www.w3.org/2003/11/swrl#argument1" : [ {
+    "@id" : "urn:swrl:var#h"
+  } ],
+  "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
+  } ]
+}, {
+  "@id" : "_:genid40",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
+  "http://www.w3.org/2003/11/swrl#argument1" : [ {
+    "@id" : "urn:swrl:var#h"
+  } ],
+  "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel"
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
+  "http://www.w3.org/2003/11/swrl#body" : [ {
+    "@list" : [ {
+      "@id" : "_:genid55"
+    }, {
+      "@id" : "_:genid53"
+    }, {
+      "@id" : "_:genid49"
+    }, {
+      "@id" : "_:genid47"
+    }, {
+      "@id" : "_:genid43"
+    } ]
+  } ],
+  "http://www.w3.org/2003/11/swrl#head" : [ {
+    "@list" : [ {
+      "@id" : "_:genid57"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid43",
+  "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
+  "http://www.w3.org/2003/11/swrl#arguments" : [ {
+    "@list" : [ {
       "@id" : "urn:swrl:var#rating"
     }, {
       "@type" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -116,20 +233,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"
   } ]
 }, {
-  "@id" : "_:genid3",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "5"
-  } ],
-  "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars"
-  } ]
-}, {
-  "@id" : "_:genid30",
+  "@id" : "_:genid47",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#r"
@@ -141,7 +245,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating"
   } ]
 }, {
-  "@id" : "_:genid32",
+  "@id" : "_:genid49",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -155,7 +259,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#greaterThan"
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid53",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#r"
@@ -167,7 +271,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice"
   } ]
 }, {
-  "@id" : "_:genid38",
+  "@id" : "_:genid55",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#r"
@@ -176,20 +280,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
   } ]
 }, {
-  "@id" : "_:genid4",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid40",
+  "@id" : "_:genid57",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#r"
@@ -198,24 +289,24 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant"
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid58",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid49"
+      "@id" : "_:genid66"
     }, {
-      "@id" : "_:genid47"
+      "@id" : "_:genid64"
     }, {
-      "@id" : "_:genid43"
+      "@id" : "_:genid60"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid51"
+      "@id" : "_:genid68"
     } ]
   } ]
 }, {
-  "@id" : "_:genid43",
+  "@id" : "_:genid60",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -229,7 +320,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#greaterThan"
   } ]
 }, {
-  "@id" : "_:genid47",
+  "@id" : "_:genid64",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -241,7 +332,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating"
   } ]
 }, {
-  "@id" : "_:genid49",
+  "@id" : "_:genid66",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -250,20 +341,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction"
   } ]
 }, {
-  "@id" : "_:genid5",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid51",
+  "@id" : "_:genid68",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -272,24 +350,24 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction"
   } ]
 }, {
-  "@id" : "_:genid52",
+  "@id" : "_:genid69",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid60"
+      "@id" : "_:genid77"
     }, {
-      "@id" : "_:genid58"
+      "@id" : "_:genid75"
     }, {
-      "@id" : "_:genid54"
+      "@id" : "_:genid71"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid62"
+      "@id" : "_:genid79"
     } ]
   } ]
 }, {
-  "@id" : "_:genid54",
+  "@id" : "_:genid71",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -303,7 +381,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#greaterThan"
   } ]
 }, {
-  "@id" : "_:genid58",
+  "@id" : "_:genid75",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -315,20 +393,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating"
   } ]
 }, {
-  "@id" : "_:genid6",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid60",
+  "@id" : "_:genid77",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -337,7 +402,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument"
   } ]
 }, {
-  "@id" : "_:genid62",
+  "@id" : "_:genid79",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -346,24 +411,40 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction"
   } ]
 }, {
-  "@id" : "_:genid63",
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
+    }, {
+      "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid80",
   "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
   "http://www.w3.org/2003/11/swrl#body" : [ {
     "@list" : [ {
-      "@id" : "_:genid71"
+      "@id" : "_:genid88"
     }, {
-      "@id" : "_:genid69"
+      "@id" : "_:genid86"
     }, {
-      "@id" : "_:genid65"
+      "@id" : "_:genid82"
     } ]
   } ],
   "http://www.w3.org/2003/11/swrl#head" : [ {
     "@list" : [ {
-      "@id" : "_:genid73"
+      "@id" : "_:genid90"
     } ]
   } ]
 }, {
-  "@id" : "_:genid65",
+  "@id" : "_:genid82",
   "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
   "http://www.w3.org/2003/11/swrl#arguments" : [ {
     "@list" : [ {
@@ -377,7 +458,7 @@
     "@id" : "http://www.w3.org/2003/11/swrlb#greaterThan"
   } ]
 }, {
-  "@id" : "_:genid69",
+  "@id" : "_:genid86",
   "@type" : [ "http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -389,28 +470,7 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating"
   } ]
 }, {
-  "@id" : "_:genid7",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#Imp" ],
-  "http://www.w3.org/2003/11/swrl#body" : [ {
-    "@list" : [ {
-      "@id" : "_:genid21"
-    }, {
-      "@id" : "_:genid19"
-    }, {
-      "@id" : "_:genid15"
-    }, {
-      "@id" : "_:genid13"
-    }, {
-      "@id" : "_:genid9"
-    } ]
-  } ],
-  "http://www.w3.org/2003/11/swrl#head" : [ {
-    "@list" : [ {
-      "@id" : "_:genid23"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid71",
+  "@id" : "_:genid88",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
@@ -419,27 +479,13 @@
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum"
   } ]
 }, {
-  "@id" : "_:genid73",
+  "@id" : "_:genid90",
   "@type" : [ "http://www.w3.org/2003/11/swrl#ClassAtom" ],
   "http://www.w3.org/2003/11/swrl#argument1" : [ {
     "@id" : "urn:swrl:var#ta"
   } ],
   "http://www.w3.org/2003/11/swrl#classPredicate" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction"
-  } ]
-}, {
-  "@id" : "_:genid9",
-  "@type" : [ "http://www.w3.org/2003/11/swrl#BuiltinAtom" ],
-  "http://www.w3.org/2003/11/swrl#arguments" : [ {
-    "@list" : [ {
-      "@id" : "urn:swrl:var#price"
-    }, {
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-      "@value" : "300"
-    } ]
-  } ],
-  "http://www.w3.org/2003/11/swrl#builtin" : [ {
-    "@id" : "http://www.w3.org/2003/11/swrlb#greaterThan"
   } ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/abstract",
@@ -587,7 +633,7 @@
     "@value" : "Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid1"
+    "@id" : "_:genid18"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Feria_Toledo",
@@ -656,6 +702,12 @@
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A restaurant that is clasified as high ended due the quality of the food and the service."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "High End restaurant"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
   } ]
@@ -674,7 +726,7 @@
     "@value" : "https://dbpedia.org/page/Hotel"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid2"
+    "@id" : "_:genid19"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel_Del_Mar_Zaragoza",
@@ -723,7 +775,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
   }, {
-    "@id" : "_:genid3"
+    "@id" : "_:genid20"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument",
@@ -829,7 +881,7 @@
     "@value" : "Restaurant"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid4"
+    "@id" : "_:genid21"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurante_Delicia_Zaragoza",
@@ -940,6 +992,12 @@
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A cultural tourist attraction that is rated by the guests with good reviews"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "To cultural tourist attraction"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
   } ]
@@ -955,7 +1013,7 @@
     "@value" : "Tourist Attraction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid5"
+    "@id" : "_:genid22"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristHotel",
@@ -997,7 +1055,7 @@
     "@value" : "Transport"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid6"
+    "@id" : "_:genid23"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tranvía_Toledo",
@@ -1086,9 +1144,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice",
@@ -1106,6 +1161,66 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Object property to find all events in a city"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "City Has Event"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasHotel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Object property to find all hotels in a city"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "City Has Hotel"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasRestaurant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Object property to find all restaurants in a city"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "City Has Restaurant"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTouristAttraction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Object property to find all tourist attraction in a city"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "City has tourist attraction"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cityHasTransport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Object property to find all trasnports in a city"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "City Has Transport"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#company",
@@ -1199,13 +1314,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Hotel Stars"
-  }, {
-    "@language" : "en",
     "@value" : "The official classification of a hotel's quality level, represented as a number of stars (typically 1-5)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Hotel Stars"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
@@ -1218,17 +1334,7 @@
     "@value" : "A unique machine-readable identifier for an entity (e.g., UUID, database key, or IRI). This is distinct from human-readable names and should be persistent and unambiguous."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport"
+    "@id" : "_:genid1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1243,8 +1349,14 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A comma separated location (latitud, longitud)"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Latitud Longitud"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#sameAs" : [ {
     "@value" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"
@@ -1256,15 +1368,7 @@
     "@value" : "The primary human-readable identifier or title of an entity (e.g., city name, hotel name, event name)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
+    "@id" : "_:genid8"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1281,11 +1385,7 @@
     "@value" : "A numerical evaluation score representing the quality or user satisfaction of an entity (e.g., hotel, restaurant, attraction). Use xsd:decimal for fractional values (e.g., 4.7)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant"
-  }, {
-    "@id" : "http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction"
+    "@id" : "_:genid14"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",

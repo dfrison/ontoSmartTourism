@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Ontology for Smart Tourism</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism","name":"Ontology for Smart Tourism", "headline":"This ontology models a smart tourism recommendation system, integrating structured knowledge about hotels, restaurants, tourist attractions, events, and transport services within specified cities. Designed to support personalized travel recommendations, it leverages semantic rules (SWRL) and class hierarchies to infer relevant suggestions based on user preferences, ratings, pricing, and location data.", "dateReleased":"Fri Apr 25 07:30:26 CEST 2025", "author":[{"@type":"Person","name":"Diego Frisón Aladrén"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Ontology for Smart Tourism</h1>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism">http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism</a></dd>
+<dt>Authors:</dt>
+<dd>Diego Frisón Aladrén</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Diego Frisón Aladrén. Ontology for Smart Tourism.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This ontology models a smart tourism recommendation system, integrating structured knowledge about hotels, restaurants, tourist attractions, events, and transport services within specified cities. Designed to support personalized travel recommendations, it leverages semantic rules (SWRL) and class hierarchies to infer relevant suggestions based on user preferences, ratings, pricing, and location data.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism/&gt;</td></tr>
+<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1/&gt;</td></tr>
+<tr><td><b>onto-smart-tourism</b></td><td>&lt;http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>swrl</b></td><td>&lt;http://www.w3.org/2003/11/swrl#&gt;</td></tr>
+<tr><td><b>swrlb</b></td><td>&lt;http://www.w3.org/2003/11/swrlb#&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Ontology for Smart Tourism: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Beach"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Beach">Beach</a>
+   </li>
+   <li>
+      <a href="#BeachHotel"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BeachHotel">Beach Hotel</a>
+   </li>
+   <li>
+      <a href="#BusinessHotel"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BusinessHotel">Business Hotel</a>
+   </li>
+   <li>
+      <a href="#City"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a>
+   </li>
+   <li>
+      <a href="#CulturalAttraction"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction">Cultural Attraction</a>
+   </li>
+   <li>
+      <a href="#CulturalEvent"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalEvent">Cultural Event</a>
+   </li>
+   <li>
+      <a href="#Event"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a>
+   </li>
+   <li>
+      <a href="#GastronomicEvent"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#GastronomicEvent">Gastronomic Event</a>
+   </li>
+   <li>
+      <a href="#HighEndRestaurant"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant">
+         <span>High End Restaurant</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Hotel"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a>
+   </li>
+   <li>
+      <a href="#LuxuryHotel"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel">Luxury Hotel</a>
+   </li>
+   <li>
+      <a href="#Monument"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument">Monument</a>
+   </li>
+   <li>
+      <a href="#Museum"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum">Museum</a>
+   </li>
+   <li>
+      <a href="#MusicEvent"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#MusicEvent">Music Event</a>
+   </li>
+   <li>
+      <a href="#Park"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Park">Park</a>
+   </li>
+   <li>
+      <a href="#PublicBicycle"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#PublicBicycle">Public Bicycle</a>
+   </li>
+   <li>
+      <a href="#Restaurant"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a>
+   </li>
+   <li>
+      <a href="#RuralHotel"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#RuralHotel">Rural Hotel</a>
+   </li>
+   <li>
+      <a href="#SportEvent"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#SportEvent">Sport Event</a>
+   </li>
+   <li>
+      <a href="#Taxi"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Taxi">Taxi</a>
+   </li>
+   <li>
+      <a href="#TechnologicalEvent"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TechnologicalEvent">Technological Event</a>
+   </li>
+   <li>
+      <a href="#TopCulturalTouristAttraction"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction">
+         <span>Top Cultural Tourist Attraction</span>
+      </a>
+   </li>
+   <li>
+      <a href="#TouristAttraction"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a>
+   </li>
+   <li>
+      <a href="#TouristHotel"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristHotel">Tourist Hotel</a>
+   </li>
+   <li>
+      <a href="#Tram"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tram">Tram</a>
+   </li>
+   <li>
+      <a href="#Transport"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a>
+   </li>
+   <li>
+      <a href="#Underground"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Underground">Underground</a>
+   </li>
+   <li>
+      <a href="#UrbanBus"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#UrbanBus">Urban Bus</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#takesPlaceIn"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn">Event Takes Place In</a>
+   </li>
+   <li>
+      <a href="#hotelIsLocatedIn"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn">Hotel Is Located In</a>
+   </li>
+   <li>
+      <a href="#restaurantIsLocatedIn"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn">Restaurant Is Located In</a>
+   </li>
+   <li>
+      <a href="#touristAttractionIsLocatedIn"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn">Tourist Attraction Is Located In</a>
+   </li>
+   <li>
+      <a href="#transportOperatesIn"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn">Transport Operates In</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#averageMealPrice"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice">Average meal price</a>
+   </li>
+   <li>
+      <a href="#averageTransportPrice"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice">Average transport price</a>
+   </li>
+   <li>
+      <a href="#company"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#company">Company</a>
+   </li>
+   <li>
+      <a href="#cuisineType"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cuisineType">Cuisine type</a>
+   </li>
+   <li>
+      <a href="#eventDate"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#eventDate">Event date</a>
+   </li>
+   <li>
+      <a href="#hotelNightPrice"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice">Hotel nightly price</a>
+   </li>
+   <li>
+      <a href="#hotelStars"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars">
+         <span>hotel Stars</span>
+      </a>
+   </li>
+   <li>
+      <a href="#identifier"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a>
+   </li>
+   <li>
+      <a href="#latLong"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong">Latitud Longitud</a>
+   </li>
+   <li>
+      <a href="#name"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a>
+   </li>
+   <li>
+      <a href="#rating"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/abstract" title="http://purl.org/dc/elements/1.1/abstract">
+         <span>abstract</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2000/01/rdf-schema#sameAs" title="http://www.w3.org/2000/01/rdf-schema#sameAs">
+         <span>same As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Castillo_Zaragoza"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Castillo_Zaragoza">Castillo Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Feria_Toledo"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Feria_Toledo">Feria Toledo</a>
+   </li>
+   <li>
+      <a href="#Festival_Zaragoza"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Festival_Zaragoza">Festival Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Hotel_Del_Mar_Zaragoza"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel_Del_Mar_Zaragoza">Hotel Del Mar Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Parque_Toledo"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Parque_Toledo">Parque Toledo</a>
+   </li>
+   <li>
+      <a href="#Restaurante_Delicia_Zaragoza"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurante_Delicia_Zaragoza">Restaurante Delicia Zaragoza</a>
+   </li>
+   <li>
+      <a href="#Toledo"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo">Toledo</a>
+   </li>
+   <li>
+      <a href="#Tranvía_Toledo"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tranvía_Toledo">Tranvía Toledo</a>
+   </li>
+   <li>
+      <a href="#Zaragoza"
+         title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a>
+   </li>
+</ul><h4> SWRL Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#d4e1022">Rule #1</a>
+   </li>
+   <li>
+      <a href="#d4e1197">Rule #2</a>
+   </li>
+   <li>
+      <a href="#d4e1309">Rule #3</a>
+   </li>
+   <li>
+      <a href="#d4e1421">Rule #4</a>
+   </li>
+   <li>
+      <a href="#d4e1533">Rule #5</a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Ontology for Smart Tourism: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">This ontology models concepts related to smart tourism based on user recommendations, integrating data about events, hotels, tourist attractions, and restaurants in specified cities. Its goal is to generate personalized recommendations based on user preferences.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Ontology for Smart Tourism classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Ontology for Smart Tourism.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Beach" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Beach">Beach</a></li>
+  <li><a href="#BeachHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BeachHotel">Beach Hotel</a></li>
+  <li><a href="#BusinessHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BusinessHotel">Business Hotel</a></li>
+  <li><a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a></li>
+  <li><a href="#CulturalAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction">Cultural Attraction</a></li>
+  <li><a href="#CulturalEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalEvent">Cultural Event</a></li>
+  <li><a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a></li>
+  <li><a href="#GastronomicEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#GastronomicEvent">Gastronomic Event</a></li>
+  <li><a href="#HighEndRestaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant"> <span>High End Restaurant</span> </a></li>
+  <li><a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a></li>
+  <li><a href="#LuxuryHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel">Luxury Hotel</a></li>
+  <li><a href="#Monument" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument">Monument</a></li>
+  <li><a href="#Museum" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum">Museum</a></li>
+  <li><a href="#MusicEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#MusicEvent">Music Event</a></li>
+  <li><a href="#Park" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Park">Park</a></li>
+  <li><a href="#PublicBicycle" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#PublicBicycle">Public Bicycle</a></li>
+  <li><a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a></li>
+  <li><a href="#RuralHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#RuralHotel">Rural Hotel</a></li>
+  <li><a href="#SportEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#SportEvent">Sport Event</a></li>
+  <li><a href="#Taxi" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Taxi">Taxi</a></li>
+  <li><a href="#TechnologicalEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TechnologicalEvent">Technological Event</a></li>
+  <li><a href="#TopCulturalTouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction"> <span>Top Cultural Tourist Attraction</span> </a></li>
+  <li><a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a></li>
+  <li><a href="#TouristHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristHotel">Tourist Hotel</a></li>
+  <li><a href="#Tram" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tram">Tram</a></li>
+  <li><a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a></li>
+  <li><a href="#Underground" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Underground">Underground</a></li>
+  <li><a href="#UrbanBus" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#UrbanBus">Urban Bus</a></li>
+ </ul>
+ <div class="entity" id="Beach">
+  <h3>Beach<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Beach</p>
+  <div class="comment">
+   <span class="markdown">A sandy or pebbly shoreline by a body of water, used for swimming, sunbathing, or other recreational activities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BeachHotel">
+  <h3>Beach Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BeachHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel located on or near a beach, offering direct access to the shoreline and often featuring water-related activities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Hotel_Del_Mar_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel_Del_Mar_Zaragoza">Hotel Del Mar Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BusinessHotel">
+  <h3>Business Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BusinessHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel designed to accommodate business travelers, often featuring conference rooms, business centers, and convenient urban locations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="City">
+  <h3>City<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City</p>
+  <div class="comment">
+   <span class="markdown">A large human settlement with dense population, infrastructure, and administrative functions, often a destination for tourism or business.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#takesPlaceIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn">Event Takes Place In</a> <sup class="type-op" title="object property">op</sup>, <a href="#hotelIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn">Hotel Is Located In</a> <sup class="type-op" title="object property">op</sup>, <a href="#restaurantIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn">Restaurant Is Located In</a> <sup class="type-op" title="object property">op</sup>, <a href="#touristAttractionIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn">Tourist Attraction Is Located In</a> <sup class="type-op" title="object property">op</sup>, <a href="#transportOperatesIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn">Transport Operates In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo">Toledo</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CulturalAttraction">
+  <h3>Cultural Attraction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction</p>
+  <div class="comment">
+   <span class="markdown">A site or venue that showcases the arts, traditions, heritage, or customs of a community or region (e.g., theaters, festivals, historic districts).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CulturalEvent">
+  <h3>Cultural Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalEvent</p>
+  <div class="comment">
+   <span class="markdown">A public gathering that showcases the traditions, arts, or heritage of a community, such as festivals, exhibitions, or performances.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Event">
+  <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event</p>
+  <div class="comment">
+   <span class="markdown">A planned public or social occasion, such as a sports competition, concert, festival, or exhibition.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#CulturalEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalEvent">Cultural Event</a> <sup class="type-c" title="class">c</sup>, <a href="#GastronomicEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#GastronomicEvent">Gastronomic Event</a> <sup class="type-c" title="class">c</sup>, <a href="#MusicEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#MusicEvent">Music Event</a> <sup class="type-c" title="class">c</sup>, <a href="#SportEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#SportEvent">Sport Event</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnologicalEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TechnologicalEvent">Technological Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#takesPlaceIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn">Event Takes Place In</a> <sup class="type-op" title="object property">op</sup>, <a href="#eventDate" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#eventDate">Event date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GastronomicEvent">
+  <h3>Gastronomic Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#GastronomicEvent</p>
+  <div class="comment">
+   <span class="markdown">An event centered around food and culinary experiences, including food festivals, tasting events, or cooking competitions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HighEndRestaurant">
+  <h3>High End Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel">
+  <h3>Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel</p>
+  <div class="comment">
+   <span class="markdown">An establishment that provides lodging, meals, and other services for travelers and tourists.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#BeachHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BeachHotel">Beach Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#BusinessHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BusinessHotel">Business Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#LuxuryHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel">Luxury Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#RuralHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#RuralHotel">Rural Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#TouristHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristHotel">Tourist Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hotelIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn">Hotel Is Located In</a> <sup class="type-op" title="object property">op</sup>, <a href="#hotelNightPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice">Hotel nightly price</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hotelStars" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars">hotel Stars</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LuxuryHotel">
+  <h3>Luxury Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel</p>
+  <div class="comment">
+   <span class="markdown">A high-end hotel offering premium amenities, exceptional service, and often located in prestigious areas.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Monument">
+  <h3>Monument<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument</p>
+  <div class="comment">
+   <span class="markdown">A structure, statue, or building of historical, cultural, or architectural significance, often commemorating a person or event.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Parque_Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Parque_Toledo">Parque Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Museum">
+  <h3>Museum<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum</p>
+  <div class="comment">
+   <span class="markdown">An institution that preserves and exhibits objects of artistic, historical, scientific, or cultural importance for education and public viewing.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Castillo_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Castillo_Zaragoza">Castillo Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MusicEvent">
+  <h3>Music Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#MusicEvent</p>
+  <div class="comment">
+   <span class="markdown">An organized gathering featuring musical performances, including concerts, recitals, or music festivals.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Festival_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Festival_Zaragoza">Festival Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Park">
+  <h3>Park<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Park</p>
+  <div class="comment">
+   <span class="markdown">A designated natural or landscaped area for public recreation, leisure, or conservation, often featuring gardens, trails, or wildlife.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PublicBicycle">
+  <h3>Public Bicycle<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#PublicBicycle</p>
+  <div class="comment">
+   <span class="markdown">A bicycle-sharing system providing short-term bicycle rentals for urban transportation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurant">
+  <h3>Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant</p>
+  <div class="comment">
+   <span class="markdown">A business establishment where meals are prepared and served to customers for dining in or takeaway.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#HighEndRestaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant">High End Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#averageMealPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice">Average meal price</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#cuisineType" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cuisineType">Cuisine type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#restaurantIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn">Restaurant Is Located In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Restaurante_Delicia_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurante_Delicia_Zaragoza">Restaurante Delicia Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RuralHotel">
+  <h3>Rural Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#RuralHotel</p>
+  <div class="comment">
+   <span class="markdown">A lodging establishment located in the countryside, often offering a peaceful environment and connection to nature.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SportEvent">
+  <h3>Sport Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#SportEvent</p>
+  <div class="comment">
+   <span class="markdown">An organized competitive physical activity or game, ranging from local matches to international tournaments.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Feria_Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Feria_Toledo">Feria Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Taxi">
+  <h3>Taxi<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Taxi</p>
+  <div class="comment">
+   <span class="markdown">A vehicle for hire with a driver, providing on-demand private transportation services.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TechnologicalEvent">
+  <h3>Technological Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TechnologicalEvent</p>
+  <div class="comment">
+   <span class="markdown">An event focused on showcasing or discussing technological innovations, such as tech conferences, expos, or hackathons.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TopCulturalTouristAttraction">
+  <h3>Top Cultural Tourist Attraction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TouristAttraction">
+  <h3>Tourist Attraction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction</p>
+  <div class="comment">
+   <span class="markdown">A place of interest that draws visitors due to its cultural, historical, natural, or entertainment value.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Beach" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Beach">Beach</a> <sup class="type-c" title="class">c</sup>, <a href="#CulturalAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction">Cultural Attraction</a> <sup class="type-c" title="class">c</sup>, <a href="#Monument" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument">Monument</a> <sup class="type-c" title="class">c</sup>, <a href="#Museum" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum">Museum</a> <sup class="type-c" title="class">c</sup>, <a href="#Park" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Park">Park</a> <sup class="type-c" title="class">c</sup>, <a href="#TopCulturalTouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction">Top Cultural Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#touristAttractionIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn">Tourist Attraction Is Located In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TouristHotel">
+  <h3>Tourist Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel primarily catering to tourists, typically located near popular attractions and offering services tailored for travelers.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Tram">
+  <h3>Tram<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tram</p>
+  <div class="comment">
+   <span class="markdown">A rail-based public transport system that operates primarily on street-level tracks in urban areas.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Tranvía_Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tranvía_Toledo">Tranvía Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Transport">
+  <h3>Transport<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport</p>
+  <div class="comment">
+   <span class="markdown">A system or service for moving people or goods from one place to another, including vehicles, infrastructure, and routes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#PublicBicycle" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#PublicBicycle">Public Bicycle</a> <sup class="type-c" title="class">c</sup>, <a href="#Taxi" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Taxi">Taxi</a> <sup class="type-c" title="class">c</sup>, <a href="#Tram" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tram">Tram</a> <sup class="type-c" title="class">c</sup>, <a href="#Underground" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Underground">Underground</a> <sup class="type-c" title="class">c</sup>, <a href="#UrbanBus" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#UrbanBus">Urban Bus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#averageTransportPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice">Average transport price</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#company" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#company">Company</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#transportOperatesIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn">Transport Operates In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Underground">
+  <h3>Underground<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Underground</p>
+  <div class="comment">
+   <span class="markdown">An electric railway system operating on underground tracks in urban areas, also known as subway or metro.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UrbanBus">
+  <h3>Urban Bus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#UrbanBus</p>
+  <div class="comment">
+   <span class="markdown">A public bus service operating within urban areas, providing scheduled transportation along fixed routes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#takesPlaceIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn">Event Takes Place In</a></li>
+  <li><a href="#hotelIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn">Hotel Is Located In</a></li>
+  <li><a href="#restaurantIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn">Restaurant Is Located In</a></li>
+  <li><a href="#touristAttractionIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn">Tourist Attraction Is Located In</a></li>
+  <li><a href="#transportOperatesIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn">Transport Operates In</a></li>
+ </ul>
+ <div class="entity" id="takesPlaceIn">
+  <h3>Event Takes Place In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn</p>
+  <div class="comment">
+   <span class="markdown">Relates an event to the city where it occurs.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hotelIsLocatedIn">
+  <h3>Hotel Is Located In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn</p>
+  <div class="comment">
+   <span class="markdown">Specifies the city where a hotel (or its primary premises) is physically located.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="restaurantIsLocatedIn">
+  <h3>Restaurant Is Located In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn</p>
+  <div class="comment">
+   <span class="markdown">Indicates the city where a restaurant is physically established.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="touristAttractionIsLocatedIn">
+  <h3>Tourist Attraction Is Located In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn</p>
+  <div class="comment">
+   <span class="markdown">Relates a tourist attraction (e.g., museum, park) to the city where it is physically situated.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="transportOperatesIn">
+  <h3>Transport Operates In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn</p>
+  <div class="comment">
+   <span class="markdown">Links a transport service (e.g., metro, bus system) to the city where it operates.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#averageMealPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice">Average meal price</a></li>
+  <li><a href="#averageTransportPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice">Average transport price</a></li>
+  <li><a href="#company" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#company">Company</a></li>
+  <li><a href="#cuisineType" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cuisineType">Cuisine type</a></li>
+  <li><a href="#eventDate" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#eventDate">Event date</a></li>
+  <li><a href="#hotelNightPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice">Hotel nightly price</a></li>
+  <li><a href="#hotelStars" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars"> <span>hotel Stars</span> </a></li>
+  <li><a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a></li>
+  <li><a href="#latLong" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong">Latitud Longitud</a></li>
+  <li><a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a></li>
+  <li><a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a></li>
+ </ul>
+ <div class="entity" id="averageMealPrice">
+  <h3>Average meal price<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice</p>
+  <div class="comment">
+   <span class="markdown">The estimated average price for a standard meal (or per person) at this restaurant, in the local currency. Excludes special menus or discounts.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has equivalent properties
+    </dt>
+    <dd>
+     <a href="#averageTransportPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice">Average transport price</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="averageTransportPrice">
+  <h3>Average transport price<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice</p>
+  <div class="comment">
+   <span class="markdown">The typical cost (e.g., per ride, kilometer, or hour) for using this transport service, in the local currency. Includes base fares or estimated averages.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has equivalent properties
+    </dt>
+    <dd>
+     <a href="#averageMealPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice">Average meal price</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="company">
+  <h3>Company<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#company</p>
+  <div class="comment">
+   <span class="markdown">Relates a transport service (e.g., bus line, bike-sharing system) to the company or organization responsible for its operation.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="cuisineType">
+  <h3>Cuisine type<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cuisineType</p>
+  <div class="comment">
+   <span class="markdown">Specifies the primary culinary style or cuisine served by the restaurant (e.g., Italian, Mexican, Vegan).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="eventDate">
+  <h3>Event date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#eventDate</p>
+  <div class="comment">
+   <span class="markdown">The date or date range when the event occurs.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hotelNightPrice">
+  <h3>Hotel nightly price<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice</p>
+  <div class="comment">
+   <span class="markdown">he standard price for one night's accommodation at this hotel, in the local currency.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hotelStars">
+  <h3>hotel Stars<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars</p>
+  <div class="comment">
+   <span class="markdown">Hotel Stars</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="identifier">
+  <h3>Identifier<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier</p>
+  <div class="comment">
+   <span class="markdown">A unique machine-readable identifier for an entity (e.g., UUID, database key, or IRI). This is distinct from human-readable names and should be persistent and unambiguous.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Transport" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="latLong">
+  <h3>Latitud Longitud<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong</p>
+  <div class="comment">
+   <span class="markdown">A comma separated location (latitud, longitud)</span>
+  </div>
+ </div>
+ <div class="entity" id="name">
+  <h3>Name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name</p>
+  <div class="comment">
+   <span class="markdown">The primary human-readable identifier or title of an entity (e.g., city name, hotel name, event name).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Event" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="rating">
+  <h3>Rating<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating</p>
+  <div class="comment">
+   <span class="markdown">A numerical evaluation score representing the quality or user satisfaction of an entity (e.g., hotel, restaurant, attraction). Use xsd:decimal for fractional values (e.g., 4.7).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#TouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TouristAttraction">Tourist Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/elements/1.1/abstract" title="http://purl.org/dc/elements/1.1/abstract"> <span>abstract</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
+  <li><a href="#http://www.w3.org/2000/01/rdf-schema#sameAs" title="http://www.w3.org/2000/01/rdf-schema#sameAs"> <span>same As</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/abstract">
+  <h3>abstract<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/abstract</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2000/01/rdf-schema#sameAs">
+  <h3>same As<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2000/01/rdf-schema#sameAs</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#Castillo_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Castillo_Zaragoza">Castillo Zaragoza</a></li>
+  <li><a href="#Feria_Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Feria_Toledo">Feria Toledo</a></li>
+  <li><a href="#Festival_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Festival_Zaragoza">Festival Zaragoza</a></li>
+  <li><a href="#Hotel_Del_Mar_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel_Del_Mar_Zaragoza">Hotel Del Mar Zaragoza</a></li>
+  <li><a href="#Parque_Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Parque_Toledo">Parque Toledo</a></li>
+  <li><a href="#Restaurante_Delicia_Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurante_Delicia_Zaragoza">Restaurante Delicia Zaragoza</a></li>
+  <li><a href="#Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo">Toledo</a></li>
+  <li><a href="#Tranvía_Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tranvía_Toledo">Tranvía Toledo</a></li>
+  <li><a href="#Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a></li>
+ </ul>
+ <div class="entity" id="Castillo_Zaragoza">
+  <h3>Castillo Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Castillo_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">A historic castle in Zaragoza, notable for its architectural and cultural significance as a popular tourist destination.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Museum" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum">Museum</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#touristAttractionIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn">Tourist Attraction Is Located In</a> <sup class="type-op" title="object property">op</sup> <a href="#Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"1"</span>
+   </dd>
+   <dd>
+    <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Castillo Zaragoza"</span>
+   </dd>
+   <dd>
+    <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3.7"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Feria_Toledo">
+  <h3>Feria Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Feria_Toledo</p>
+  <div class="comment">
+   <span class="markdown">An annual fair in Toledo featuring local crafts, food, and cultural performances, attracting visitors from across the region.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SportEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#SportEvent">Sport Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#takesPlaceIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn">Event Takes Place In</a> <sup class="type-op" title="object property">op</sup> <a href="#Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo">Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#eventDate" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#eventDate">Event date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-08-26T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a> </span>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"5"</span>
+   </dd>
+   <dd>
+    <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Feria Toledo"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Festival_Zaragoza">
+  <h3>Festival Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Festival_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">A lively festival in Zaragoza celebrating music, arts, and local traditions, held annually with diverse activities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#MusicEvent" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#MusicEvent">Music Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#takesPlaceIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#takesPlaceIn">Event Takes Place In</a> <sup class="type-op" title="object property">op</sup> <a href="#Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#eventDate" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#eventDate">Event date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-02-22T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a> </span>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"18"</span>
+   </dd>
+   <dd>
+    <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Festival Zaragoza"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Hotel_Del_Mar_Zaragoza">
+  <h3>Hotel Del Mar Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel_Del_Mar_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">A well-rated hotel in Zaragoza offering comfortable accommodations and amenities for travelers.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BeachHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#BeachHotel">Beach Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hotelIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelIsLocatedIn">Hotel Is Located In</a> <sup class="type-op" title="object property">op</sup> <a href="#Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hotelNightPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice">Hotel nightly price</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"170"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+   <dd>
+    <a href="#hotelStars" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars">hotel Stars</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"72"</span>
+   </dd>
+   <dd>
+    <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Hotel del Mar Zaragoza"</span>
+   </dd>
+   <dd>
+    <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"5.0"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Parque_Toledo">
+  <h3>Parque Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Parque_Toledo</p>
+  <div class="comment">
+   <span class="markdown">A scenic park in Toledo, ideal for leisure walks, picnics, and enjoying nature within the city.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Monument" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument">Monument</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#touristAttractionIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#touristAttractionIsLocatedIn">Tourist Attraction Is Located In</a> <sup class="type-op" title="object property">op</sup> <a href="#Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo">Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"11"</span>
+   </dd>
+   <dd>
+    <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Parque Toledo"</span>
+   </dd>
+   <dd>
+    <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"4.8"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Restaurante_Delicia_Zaragoza">
+  <h3>Restaurante Delicia Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurante_Delicia_Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">A renowned restaurant in Zaragoza, specializing in local cuisine and offering a memorable dining experience.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#restaurantIsLocatedIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#restaurantIsLocatedIn">Restaurant Is Located In</a> <sup class="type-op" title="object property">op</sup> <a href="#Zaragoza" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza">Zaragoza</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#averageMealPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice">Average meal price</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"48"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+   <dd>
+    <a href="#cuisineType" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#cuisineType">Cuisine type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Japonesa"</span>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"13"</span>
+   </dd>
+   <dd>
+    <a href="#name" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#name">Name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Restaurante Delicia Zaragoza"</span>
+   </dd>
+   <dd>
+    <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"4.1"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Toledo">
+  <h3>Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo</p>
+  <div class="comment">
+   <span class="markdown">A historic city in Spain, famous for its medieval architecture, cultural heritage, and vibrant tourism sector.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"1"</span>
+   </dd>
+   <dd>
+    <a href="#latLong" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong">Latitud Longitud</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"39.8628,-4.0273"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Tranvía_Toledo">
+  <h3>Tranvía Toledo<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tranvía_Toledo</p>
+  <div class="comment">
+   <span class="markdown">The tram system in Toledo, providing efficient and eco-friendly public transportation across the city.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Tram" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Tram">Tram</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#transportOperatesIn" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#transportOperatesIn">Transport Operates In</a> <sup class="type-op" title="object property">op</sup> <a href="#Toledo" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Toledo">Toledo</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#averageTransportPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageTransportPrice">Average transport price</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3.61"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+   <dd>
+    <a href="#company" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#company">Company</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Trans Toledo"</span>
+   </dd>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Zaragoza">
+  <h3>Zaragoza<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Zaragoza</p>
+  <div class="comment">
+   <span class="markdown">A major Spanish city known for its rich history, landmarks, and dynamic urban life, attracting both tourists and businesses.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#City" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#identifier" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#identifier">Identifier</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"5"</span>
+   </dd>
+   <dd>
+    <a href="#latLong" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#latLong">Latitud Longitud</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"41.6488,-0.8891"</span>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="swrlrules">
+ <h3 id="swrlrules" class="list">SWRL rules</h3>
+ <ul class="hlist">
+  <li><a href="#d4e1022">Rule #1</a></li>
+  <li><a href="#d4e1197">Rule #2</a></li>
+  <li><a href="#d4e1309">Rule #3</a></li>
+  <li><a href="#d4e1421">Rule #4</a></li>
+  <li><a href="#d4e1533">Rule #5</a></li>
+ </ul>
+ <div class="entity" id="d4e1022">
+  <h3>Rule #1<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><a href="#Restaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>(?r) , <a href="#averageMealPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#averageMealPrice">Average meal price</a> <sup class="type-dp" title="data property">dp</sup>(?r,?price) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) , <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>(?r,?rating) , <a href="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual" title="greaterThanOrEqual">greaterThanOrEqual</a>(?) -&gt; <a href="#HighEndRestaurant" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#HighEndRestaurant">High End Restaurant</a> <sup class="type-c" title="class">c</sup>(?r)</p>
+ </div>
+ <div class="entity" id="d4e1197">
+  <h3>Rule #2<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><a href="#CulturalAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#CulturalAttraction">Cultural Attraction</a> <sup class="type-c" title="class">c</sup>(?ta) , <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>(?ta,?r) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) -&gt; <a href="#TopCulturalTouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction">Top Cultural Tourist Attraction</a> <sup class="type-c" title="class">c</sup>(?ta)</p>
+ </div>
+ <div class="entity" id="d4e1309">
+  <h3>Rule #3<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><a href="#Monument" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Monument">Monument</a> <sup class="type-c" title="class">c</sup>(?ta) , <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>(?ta,?r) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) -&gt; <a href="#TopCulturalTouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction">Top Cultural Tourist Attraction</a> <sup class="type-c" title="class">c</sup>(?ta)</p>
+ </div>
+ <div class="entity" id="d4e1421">
+  <h3>Rule #4<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><a href="#Museum" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Museum">Museum</a> <sup class="type-c" title="class">c</sup>(?ta) , <a href="#rating" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#rating">Rating</a> <sup class="type-dp" title="data property">dp</sup>(?ta,?r) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) -&gt; <a href="#TopCulturalTouristAttraction" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#TopCulturalTouristAttraction">Top Cultural Tourist Attraction</a> <sup class="type-c" title="class">c</sup>(?ta)</p>
+ </div>
+ <div class="entity" id="d4e1533">
+  <h3>Rule #5<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p><a href="#Hotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>(?h) , <a href="#hotelStars" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelStars">hotel Stars</a> <sup class="type-dp" title="data property">dp</sup>(?h,?stars) , <a href="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual" title="greaterThanOrEqual">greaterThanOrEqual</a>(?) , <a href="#hotelNightPrice" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#hotelNightPrice">Hotel nightly price</a> <sup class="type-dp" title="data property">dp</sup>(?h,?price) , <a href="http://www.w3.org/2003/11/swrlb#greaterThan" title="greaterThan">greaterThan</a>(?) -&gt; <a href="#LuxuryHotel" title="http://www.semanticweb.org/dfrison/ontologies/2025/3/onto-smart-tourism#LuxuryHotel">Luxury Hotel</a> <sup class="type-c" title="class">c</sup>(?h)</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
